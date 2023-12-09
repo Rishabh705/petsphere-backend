@@ -1,5 +1,5 @@
 //list that cors won't prevent from accessing our server
-const whitelist = ['https://www.yoursite.com','http://localhost:3000','http://localhost:3500']
+const whitelist = ['https://www.petsphere-f.onrender.com','http://localhost:3000','http://localhost:3500']
 const corsOptions = {
     origin:(origin, callback) =>{
         //if domain is in whitelist then let it pass
