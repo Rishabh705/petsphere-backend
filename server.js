@@ -29,6 +29,7 @@ app.use(express.static(path.join('./public/')));
 //routes
 app.use('/',require('./routes/root'))
 app.use('/api/pet',require('./routes/api/pet'))
+app.use('/api/auth',require('./routes/api/auth'))
 
 //Error page
 app.get('/*', (req, res) => {
