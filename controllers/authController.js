@@ -40,7 +40,8 @@ const register = async (req, res) => {
         //create and store the new user
         const result = await User.create({
             "username": req.body.username,
-            "password": hashedPwd
+            "password": hashedPwd,
+            'favoritePets':[]
         });
 
         console.log(result);
