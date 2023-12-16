@@ -3,8 +3,8 @@ const cors = require('cors')
 const app = express()
 const path = require('path')
 const { logger } = require('./middleware/logEvents')
-const mongoose = require('mongoose');
-const connectDB = require('./config/dbConn');
+const mongoose = require('mongoose')
+const connectDB = require('./config/dbConn')
 const corsOptions = require('./config/corsOptions')
 const { log } = require('console')
 const PORT = process.env.PORT || 3500
@@ -20,11 +20,11 @@ app.use(logger)
 app.use(cors(corsOptions))
 
 //built in middlewares
-app.use(express.json());
+app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 //make all static files available
-app.use(express.static(path.join('./public/'))); 
+app.use(express.static(path.join('./public/'))) 
 
 //routes
 app.use('/',require('./routes/root'))
@@ -34,11 +34,11 @@ app.use('/api/favorites',require('./routes/api/favorite'))
 
 //Error page
 app.get('/*', (req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))
 })
 
 //don't listen if mongo connection fails
 mongoose.connection.once('open', ()=>{
-    console.log('Connected to MONGO');
+    console.log('Connected to MONGO')
     app.listen(PORT, ()=> console.log(`Server running on port ${PORT}`))
 })

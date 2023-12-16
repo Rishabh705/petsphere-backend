@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require('express')
 const router = express.Router()
-const path = require('path');
+const path = require('path')
 const favoriteController = require("../../controllers/favoriteController")
 
 router.route('/')
