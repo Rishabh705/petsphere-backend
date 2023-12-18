@@ -8,7 +8,7 @@ const getAllPets = async (req, res) => {
     // Extract filters from the request query
     const typeFilter = req.query.type
     const ageFilter = req.query.age
-    const breedFilter = req.query.breed
+    const breedFilter = req.query.breeds
     const genderFilter = req.query.gender
 
    // Construct the filter object based on provided filters
